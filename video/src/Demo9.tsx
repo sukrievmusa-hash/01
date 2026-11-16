@@ -169,7 +169,7 @@ const Hook: React.FC<{ f: number }> = ({ f }) => {
 
 const LinkChip: React.FC<{ f: number }> = ({ f }) => {
   const at = CUE('b', 3);
-  const a = pop(f, at, 10) * (1 - lin(f, LT('p') - 14, LT('p') - 8));
+  const a = pop(f, at, 10) * (1 - lin(f, LT('p') - 9, LT('p') - 4));
   if (a <= 0) return null;
   return (
     <Abs x={90} y={620} w={900} style={{ display: 'flex', justifyContent: 'center' }}>
@@ -241,6 +241,7 @@ const chunks = (l: Line) => {
   const out: { a: number; b: number; ws: Word[] }[] = [];
   let cur: Word[] = [];
   l.words.forEach((w, i) => {
+    if (cur.length && cur.map((x) => x.w).concat(w.w).join(' ').length > 17) { out.push({ a: cur[0].s, b: 0, ws: cur }); cur = []; }
     cur.push(w);
     const brk = /[.,:!?»]$/.test(w.w) || cur.length >= 3 || cur.map((x) => x.w).join(' ').length > 17 || i === l.words.length - 1;
     if (brk) { out.push({ a: cur[0].s, b: 0, ws: cur }); cur = []; }

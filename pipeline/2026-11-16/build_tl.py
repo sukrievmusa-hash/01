@@ -18,7 +18,7 @@ for i, l in enumerate(out):
     end = l['words'][-1]['e']
     l['dur'] = round(end - l['t0'], 3)
     for w in l['words']: w['s'] = round(w['s'] - l['t0'], 3); w['e'] = round(w['e'] - l['t0'], 3)
-total = round(out[-1]['t0'] + out[-1]['dur'] + 0.9, 2)
+total = round(out[-1]['t0'] + out[-1]['dur'] + 1.0, 2)
 json.dump({'lines': out, 'total': total}, open('tl.json', 'w'), ensure_ascii=False)
 prev = 0
 for l in out:
