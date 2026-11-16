@@ -4,3 +4,5 @@ out/
 video/public/mix.wav
 __pycache__/
 !videos/*.mp4
+pipeline/*/*.wav
+pipeline/*/*.mp3
