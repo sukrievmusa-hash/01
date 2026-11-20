@@ -4,6 +4,8 @@ import { Demo5 } from './Demo5';
 import tl from './tl.json';
 import { Demo6 } from './Demo6';
 import tl6 from './tl6.json';
+import { DemoEnt1 } from './DemoEnt1';
+import tlent1 from './tlent1.json';
 import { Demo12 } from './Demo12';
 import tl12 from './tl12.json';
 import { Demo11 } from './Demo11';
@@ -18,6 +20,7 @@ import tl7 from './tl7.json';
 // Demo4 (ролик «5 шагов») собирается со своим tl.json — см. pipeline/ и README.
 export const RemotionRoot: React.FC = () => (
   <>
+  <Composition id="DemoEnt1" component={DemoEnt1} durationInFrames={Math.ceil(tlent1.total * 30)} fps={30} width={1080} height={1920} />
   <Composition id="Demo12" component={Demo12} durationInFrames={Math.ceil(tl12.total * 30)} fps={30} width={1080} height={1920} />
   <Composition id="Demo11" component={Demo11} durationInFrames={Math.ceil(tl11.total * 30)} fps={30} width={1080} height={1920} />
   <Composition id="Demo10" component={Demo10} durationInFrames={Math.ceil(tl10.total * 30)} fps={30} width={1080} height={1920} />
